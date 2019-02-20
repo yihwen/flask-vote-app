@@ -37,10 +37,10 @@ spec:
             }
             stage('Test') {
               steps {
-                sh "curl -s --connect-timeout 5 -X POST http://vote-app:8080/vote.html -d vote=1"
-                sh "curl -s --connect-timeout 5 -X POST http://vote-app:8080/vote.html -d vote=1"
-                sh "curl -s --connect-timeout 5 -X POST http://vote-app:8080/vote.html -d vote=1"
-                sh "curl -s http://vote-app:8080/results.html| grep data:....3"
+                sh "curl -v -X POST http://vote-app:8080/vote.html -d vote=1"
+                sh "curl -v -X POST http://vote-app:8080/vote.html -d vote=1"
+                sh "curl -v -X POST http://vote-app:8080/vote.html -d vote=1"
+                sh "curl -v http://vote-app:8080/results.html| grep data:....3"
               }
             }
           }
