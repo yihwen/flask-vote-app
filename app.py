@@ -14,12 +14,26 @@ cache['fail'] = 0;
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
-dbhost  = os.environ.get('DB_HOST', '')
-dbport  = os.environ.get('DB_PORT', '')
+#dbhost  = os.environ.get('DB_HOST', '')
+#dbport  = os.environ.get('DB_PORT', '')
+#dbname  = os.environ.get('DB_NAME', '')
+#dbuser  = os.environ.get('DB_USER', '')
+#dbpass  = os.environ.get('DB_PASS', '')
+#dbtype  = os.environ.get('DB_TYPE', '')
+
+dbhost  = os.environ.get('ENDPOINT_ADDRESS', '')
+dbport  = os.environ.get('PORT', '')
 dbname  = os.environ.get('DB_NAME', '')
-dbuser  = os.environ.get('DB_USER', '')
-dbpass  = os.environ.get('DB_PASS', '')
+dbuser  = os.environ.get('MASTER_USERNAME', '')
+dbpass  = os.environ.get('MASTER_PASSWORD', '')
 dbtype  = os.environ.get('DB_TYPE', '')
+
+# These are the var names created via the RDS binding using the AWS Broker 
+# DB_NAME: 
+# ENDPOINT_ADDRESS: 
+# MASTER_PASSWORD: 
+# MASTER_USERNAME: 
+# PORT:
 
 if dbtype == 'mysql':
    dburi  = dbtype + '://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport + '/' + dbname
