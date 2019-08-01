@@ -6,8 +6,9 @@
 	"Fedora",
 	"Debian",
 	"Ubuntu",
+	"Fedora CoreOS",
 	"Centos",
-	"Slackware",
+	"Red Hat Universal Base Image",
 	"Alpine",
 	"Arch",
 	"Other"
