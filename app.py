@@ -129,6 +129,8 @@ def fail():
 
 if __name__ == '__main__':
 
+    print "Connect to : " + dburi
+
     db.create_all()
     db.session.commit()
     hostname = socket.gethostname()
